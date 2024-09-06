@@ -708,7 +708,7 @@ Where you are only exposing **part** of your uploads directory publicly
 
 ### Customizing the body limit for requests
 
-Depending on the sizes of files you're uploading, especially in the case of multiple files, if you receive errors like this:
+The default body size limit for the Redwood API server is 100MB (per request). Depending on the sizes of files you're uploading, especially in the case of multiple files, you may receive errors like this:
 
 ```json
 {
@@ -718,7 +718,7 @@ Depending on the sizes of files you're uploading, especially in the case of mult
 }
 ```
 
-The default body size limit for the Redwood API server is 100MB (per request).
+You can configure the `bodyLimit` option to increase or decrease the default limit. 
 
 ```js title="api/server.js"
 import { createServer } from '@redwoodjs/api-server'
